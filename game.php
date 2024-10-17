@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_id'])) {
         body {
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
