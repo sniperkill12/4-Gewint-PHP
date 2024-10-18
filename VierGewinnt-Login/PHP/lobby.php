@@ -67,9 +67,18 @@
 				</div>		
 
 				<!--Open new Game Button-->
-				<div class="gameadd" id="add">	
-					<button type="button" class="addbtn" onclick="create_new_game()">+</button>			
-				</div>
+				<?php
+    				// Check for existing games
+   					$sql = "SELECT player1 FROM games WHERE player1 = '".$token."' OR player2 = '".$token."'";
+    				$result = $conn->query($sql);
+    				$hasGames = $result->num_rows != 0;
+				?>
+				 <!--Open new Game Button (only if there are no available games)-->
+				 <?php if (!$hasGames): ?>
+    				<div class="gameadd" id="add">	
+        				<button type="button" class="addbtn" onclick="create_new_game()">+</button>			
+    				</div>
+    			<?php endif; ?>
 			</div>
 
 			<div id="error_messages">
