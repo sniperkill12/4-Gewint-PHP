@@ -1,0 +1,83 @@
+.dashboard {
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 70px;
+	opacity: 0.9;
+}
+
+.logo {
+	max-height: inherit;
+	padding-left: 5px;
+  }
+
+  .continue_game_btn a {
+	padding: 26px;
+	background-color: #d1d1d1;
+	cursor: pointer;
+}
+
+.continue_game_btn a:hover {
+	background-color: #a1a1a1;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #d9d9d9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #a1a1a1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.titel {
+	margin-top: 30px;
+	color: white;
+	font-size: 40px;
+	text-align: center;
+	border-bottom: solid white 6px;
+	width: 140px;
+	margin-left: 45%;
+	padding: 13px 0;
+	
+}
+
+.color_p1 {
+	max-width: 10%; 
+	max-height: 10%;
+}
+
+.color_p2 {
+	max-width: 10%; 
+	max-height: 10%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}

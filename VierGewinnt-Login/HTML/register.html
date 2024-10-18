@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <title>Viergewinnt Register</title>
+  <link rel="stylesheet" href="../CSS/register.css">
+  <script>
+
+    function Validate() {
+      var password = document.getElementById("pw").value;
+      var confirmPassword = document.getElementById("confirm_password").value;
+      if (password != confirmPassword) {
+        document.getElementById("check").className = "fa fa-times";
+        document.getElementById("check").style.color = "red";
+        document.getElementById("submit").disabled = true;
+        return false;
+      } else {
+        document.getElementById("check").style.color = "green";
+        document.getElementById("check").className = "fa fa-check"
+        document.getElementById("submit").disabled = false;
+        return true;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form id="register_form" action="../PHP/register.php" method="POST">
+    <div class="register-box">
+      <h1>Register</h1>
+      <div class="textbox">
+        <input type="email" placeholder="Email *" name="email" value="" required>
+      </div>
+      <div class="textbox">
+        <input type="password" placeholder="Password *" name="pw" value="" id="pw" onkeyup="Validate()" required>
+      </div>
+      <div class="textbox">
+        <input type="password" placeholder="Confirm password *" name="confirm_password" value="" id="confirm_password"
+          onkeyup="Validate()" required>
+        <i class="" aria-hidden="true" id="check"></i>
+      </div>
+      <div class="textbox">
+        <input type="text" placeholder="Nickname *" name="nickname" value="" required>
+      </div>
+
+      <!-- <div class="textbox">
+        <input type="text" placeholder="Firstname" name="fname" value="">
+      </div>
+      <div class="textbox">
+        <input type="text" placeholder="Name" name="name" value="">
+      </div>
+      <div class="textbox">
+        <input type="number" placeholder="Age" name="age" value="" min="18" max="100">
+      </div>
+      <div>
+        <label class="container">No information
+          <input type="radio" checked="checked" name="radio" value="def">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Male
+          <input type="radio" name="radio" value="male">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Female
+          <input type="radio" name="radio" value="female">
+          <span class="checkmark"></span>
+        </label>
+      </div> -->
+      <input class="btn" id="submit" type="submit" name="submit" value="Register">
+  </form>
+  <a href="/VierGewinnt-Login/PHP/login.php">
+    <input class="btn" type="button" name="" value="Back">
+  </a>
+  </div>
+</body>
+
+</html>
