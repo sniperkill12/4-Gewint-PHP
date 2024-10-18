@@ -41,48 +41,38 @@ function load_current_turn()
     xhttp.send();
 }
 
-function check_for_winner()
-{
+function check_for_winner() {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() 
-    {
-        if (this.readyState == 4 && this.status == 200) 
-        {
-            if(this.responseText.trim() != "false")
-            {
-                if(this.responseText.trim() == getCookie("token"))
-                {
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const winner = this.responseText.trim();
+            
+            if (winner !== "false") {
+                if (winner === getCookie("token")) {
                     document.getElementById("current_turn").innerHTML = "<h1>You win!</h1>";
+                    alert("Du hast gewonnen!"); // Alert in German
                     var xhttp2 = new XMLHttpRequest();
                     xhttp2.open("GET", "../PHP/game_delete_instance.php", true);
-                    xhttp2.onreadystatechange = function() 
-                    {
-                        if (this.readyState == 4 && this.status == 200) 
-                        {
+                    xhttp2.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
                             window.location.href = "lobby.php";
                         }
                     }
                     xhttp2.send();
-                }
-
-                else
-                {
+                } else {
                     document.getElementById("current_turn").innerHTML = "<h1>You lose!</h1>";
+                    alert("Du hast verloren!"); // Alert in German
                     window.location.href = "lobby.php";
                 }
-            }
-            
-            else
-            {
+            } else {
                 load_current_turn();
             }
-            
         }
     };
     xhttp.open("GET", "../PHP/game_has_winner.php", true);
     xhttp.send();
-    
 }
+
 
 function getCookie(cname) 
 {
