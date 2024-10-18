@@ -16,6 +16,5 @@ Team:<br>
   a. Start your apache and sql service<br>
   b. Go to http://localhost/phpmyadmin<br>
   c1. Create a Database called "viergewinnt"<br>
-  c2. Alternatively you can choose a different database name, but then you have to change<br>
-      $dbname = "<b>viergewinnt</b>" into $dbname = "<b>NAME OF YOUR DB</b>"<br>
+  c2. Run the SQL scripts into the database
 4. go to http://localhost/viergewinnt-login/login.php<br>
