@@ -69,7 +69,7 @@
 				<!--Open new Game Button-->
 				<?php
     				// Check for existing games
-   					$sql = "SELECT player1 FROM games WHERE player1 = '".$token."' OR player2 = '".$token."'";
+					$sql = "SELECT player1 FROM games";
     				$result = $conn->query($sql);
     				$hasGames = $result->num_rows != 0;
 				?>
